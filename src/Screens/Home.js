@@ -37,7 +37,6 @@ export default class Home extends Component<Props> {
   }
 
   render() {
-
     return (
       <View style={styles.container}>
         <Banana></Banana>
