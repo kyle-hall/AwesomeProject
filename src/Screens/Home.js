@@ -8,7 +8,6 @@ import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native'
 
 import Banana from '../Components/Banana/Banana'
 import Blink from '../Components/Blink/Blink'
-import FixedDimensions from '../Components/FixedDimensions/FixedDimensions'
 
 const styles = StyleSheet.create({
   container: {
@@ -51,6 +50,10 @@ export default class Home extends Component<Props> {
         <Button
           title='Sizing'
           onPress={() => this.props.navigation.navigate('Sizing')}
+        />
+        <Button
+          title='Inputs'
+          onPress={() => this.props.navigation.navigate('Inputs')}
         />
       </View>
     )

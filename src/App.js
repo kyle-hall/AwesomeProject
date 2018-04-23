@@ -10,7 +10,8 @@ import { AppRegistry, StyleSheet, Text, View } from 'react-native'
 import { StackNavigator } from 'react-navigation'
 
 import Home from './Screens/Home'
-import FixedDimensions from './Components/FixedDimensions/FixedDimensions';
+import FixedDimensions from './Components/FixedDimensions/FixedDimensions'
+import Input from './Components/Input/Input'
 
 const styles = StyleSheet.create({
   container: {
@@ -24,7 +25,8 @@ const styles = StyleSheet.create({
 const RootStack = StackNavigator(
   {
     Home: { screen: Home },
-    Sizing: { screen: FixedDimensions }
+    Sizing: { screen: FixedDimensions },
+    Inputs: { screen: Input}
   },
   {
     initialRouteName: 'Home'
