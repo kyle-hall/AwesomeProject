@@ -8,10 +8,10 @@ import App from '../src/App'
 
 describe('App', () => {
   test('renders as expected', () => {
-    const tree = renderer.create(
+    const appTree = renderer.create(
       <App />
     ).toJSON()
 
-    expect(tree).toMatchSnapshot();
+    expect(appTree).toMatchSnapshot();
   })
 })
