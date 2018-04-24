@@ -11,6 +11,7 @@ import {
   ScrollView,
   Slider,
   StyleSheet,
+  Switch,
   Text,
   TouchableHighlight,
   TouchableOpacity,
@@ -20,7 +21,11 @@ import {
 } from 'react-native'
 
 type Props = {};
-type State = {language: string, sliderValue: number};
+type State = {
+  language: string,
+  sliderValue: number,
+  flipped: boolean
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -40,7 +45,11 @@ const styles = StyleSheet.create({
 })
 
 export default class Touchables extends React.Component<Props, State> {
-  state = {language: 'java', sliderValue: 1}
+  state = {
+    language: 'java',
+    sliderValue: 1,
+    flipped: true
+  }
 
   _onPressButton() {
     Alert.alert('You tapped the button')
@@ -90,7 +99,13 @@ export default class Touchables extends React.Component<Props, State> {
         <Picker
           style={{height: 150, width: 100}}
           selectedValue={this.state.language}
-          onValueChange={(itemValue: string, itemIndex: number) => this.setState({language: itemValue})}
+          onValueChange={(itemValue: string, itemIndex: number) => {
+            this.setState({
+              language: itemValue,
+              sliderValue: this.state.sliderValue,
+              flipped: this.state.flipped
+            })}
+          }
         >
           <Picker.Item label="Java" value="java"/>
           <Picker.Item label="JavaScript" value="javascript" />
@@ -109,10 +124,24 @@ export default class Touchables extends React.Component<Props, State> {
             minimumValue={1}
             value={this.state.sliderValue}
             onValueChange={(itemValue: number, itemIndex: number) => {
-              this.setState({language: this.state.language, sliderValue: itemValue})
+              this.setState({
+                language: this.state.language,
+                sliderValue: itemValue,
+                flipped: this.state.flipped
+              })
             }}
             step={1}
           />
+          <Switch
+            value={this.state.flipped}
+            onValueChange={(itemValue: boolean, itemIndex: number) => {
+              this.setState({
+                language: this.state.language,
+                sliderValue: this.state.sliderValue,
+                flipped: itemValue
+              })
+            }}
+          ></Switch>
           <View style={{height: 300}}></View>
         </View>
       </ScrollView>
