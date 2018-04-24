@@ -12,6 +12,7 @@ import { StackNavigator } from 'react-navigation'
 import Home from './Screens/Home'
 import InputScreen from './Screens/Inputs'
 import LayoutScreen from './Screens/Layouts'
+import ListScreen from './Screens/Lists';
 
 const styles = StyleSheet.create({
   container: {
@@ -26,7 +27,8 @@ const RootStack = StackNavigator(
   {
     Home: { screen: Home },
     Sizing: { screen: LayoutScreen },
-    Inputs: { screen: InputScreen}
+    Inputs: { screen: InputScreen},
+    Lists: { screen: ListScreen}
   },
   {
     initialRouteName: 'Home'

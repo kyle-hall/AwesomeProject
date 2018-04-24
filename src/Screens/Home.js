@@ -54,6 +54,10 @@ export default class Home extends Component<Props> {
           title='Inputs'
           onPress={() => this.props.navigation.navigate('Inputs')}
         />
+        <Button
+          title='Lists'
+          onPress={() => this.props.navigation.navigate('Lists')}
+        />
       </View>
     )
   }
