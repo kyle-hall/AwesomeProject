@@ -4,9 +4,15 @@
 */
 
 import React from 'react'
-import { StyleSheet, FlatList, Text, View } from 'react-native'
+import { ActivityIndicator, StyleSheet, FlatList, Text, View } from 'react-native'
 
 type Props = {};
+type State = {
+  isLoading: boolean,
+  dataSource: {
+    [x: string] : any
+  }[]
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -20,25 +26,43 @@ const styles = StyleSheet.create({
   },
 })
 
-export default class FlatListDemo extends React.Component<Props> {
+export default class FlatListDemo extends React.Component<Props, State> {
+
+  state = {
+    isLoading: true,
+    dataSource: {}
+  }
+
+  constructor(props: Props) {
+    super(props)
+  }
+
+  componentDidMount() {
+    return fetch('https://facebook.github.io/react-native/movies.json')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson.movies,
+        })
+      })
+      .catch((error) => console.error(error))
+  }
 
   render() {
-    const names = [
-      {key: 'Devin'},
-      {key: 'Jackson'},
-      {key: 'James'},
-      {key: 'Joel'},
-      {key: 'John'},
-      {key: 'Jillian'},
-      {key: 'Jimmy'},
-      {key: 'Julie'},
-    ]
+    if (this.state.isLoading) {
+      return (
+        <View style={{flex: 1, padding: 20}}>
+          <ActivityIndicator />
+        </View>
+      )
+    }
 
     return (
-      <View style={styles.container}>
+      <View style={{flex: 1, padding: 20}}>
         <FlatList
-          data={names}
-          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+          data={this.state.dataSource}
+          renderItem={({item}) => <Text>{item.title}, {item.releaseYear}</Text>}
         />
       </View>
     )

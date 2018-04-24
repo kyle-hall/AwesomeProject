@@ -20,10 +20,7 @@ export default class ListScreen extends Component<Props> {
   render() {
     return (
       <View style={{display: 'flex', flex: 1}}>
-        <Text>FlatList</Text>
         <FlatListDemo />
-        <View style={{height: 30, backgroundColor: 'lightblue'}}></View>
-        <Text>SectionList</Text>
         <SectionListDemo />
       </View>
     )
