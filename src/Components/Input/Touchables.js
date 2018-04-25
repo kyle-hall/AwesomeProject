@@ -72,6 +72,7 @@ export default class Touchables extends React.Component<Props, State> {
     ) : (
       <TouchableWithoutFeedback
             onPress={this._onPressButton}
+            onLongPress={this._onLongPressButton}
             >
           <View style={styles.button}>
             <Text style={styles.buttonText}>TouchableWithoutFeedback</Text>

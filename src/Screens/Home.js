@@ -4,10 +4,11 @@
  */
 
 import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native'
+import { AppRegistry, ScrollView, StyleSheet, Text, View, Button } from 'react-native'
 
 import Banana from '../Components/Banana/Banana'
 import Blink from '../Components/Blink/Blink'
+import NavBar from '../Components/Nav/NavBar'
 
 const styles = StyleSheet.create({
   container: {
@@ -38,26 +39,49 @@ export default class Home extends Component<Props> {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Banana></Banana>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To start, modify App.js
-        </Text>
-        <Button
-          title='Sizing'
-          onPress={() => this.props.navigation.navigate('Sizing')}
-        />
-        <Button
-          title='Inputs'
-          onPress={() => this.props.navigation.navigate('Inputs')}
-        />
-        <Button
-          title='Lists'
-          onPress={() => this.props.navigation.navigate('Lists')}
-        />
+      <View style={{flex: 1, flexDirection: 'column'}}>
+        <ScrollView
+          style={{flex: 1}}
+          contentContainerStyle={{alignItems: 'center'}}
+        >
+          <Banana></Banana>
+          <Text style={styles.welcome}>
+            Welcome to React Native!
+          </Text>
+          <Text style={styles.instructions}>
+            To start, modify App.js
+          </Text>
+          <Text style={styles.instructions}>
+            To start, modify App.js
+          </Text>
+          <Text style={styles.instructions}>
+            To start, modify App.js
+          </Text>
+          <Text style={styles.instructions}>
+            To start, modify App.js
+          </Text>
+          <Text style={styles.instructions}>
+            To start, modify App.js
+          </Text>
+          <Text style={styles.instructions}>
+            To start, modify App.js
+          </Text>
+          <Text style={styles.instructions}>
+            To start, modify App.js
+          </Text>
+          <Text style={styles.instructions}>
+            To start, modify App.js
+          </Text>
+          <Text style={styles.instructions}>
+            To start, modify App.js
+          </Text>
+          <Text style={styles.instructions}>
+            To start, modify App.js
+          </Text>
+        </ScrollView>
+        <View style={{flex: 0.1}}>
+          <NavBar navigation={this.props.navigation}/>
+        </View>
       </View>
     )
   }

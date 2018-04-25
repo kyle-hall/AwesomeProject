@@ -30,7 +30,7 @@ export default class FlatListDemo extends React.Component<Props, State> {
 
   state = {
     isLoading: true,
-    dataSource: {}
+    dataSource: []
   }
 
   constructor(props: Props) {
