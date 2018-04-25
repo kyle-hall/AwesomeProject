@@ -16,6 +16,7 @@ export default class NavBar extends React.Component<Props> {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
+        alignItems: 'center',
         backgroundColor: '#F5FCFF'
       }}>
         <Button
