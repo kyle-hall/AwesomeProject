@@ -36,11 +36,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     shadowColor: '#000000',
     shadowOffset: {
-      width: 0,
-      height: 0
+      width: 1,
+      height: 1
     },
     shadowRadius: 2,
-    shadowOpacity: 1.0
+    shadowOpacity: 1.0,
+    elevation: 1
   },
   blue: {
     backgroundColor: '#0074D9'
@@ -80,9 +81,10 @@ export default class Home extends Component<Props> {
               <View style={[styles.scrollingCard, styles.blue]}><Text>8</Text></View>
             </ScrollView>
           </View>
+          <Text>Where am I?</Text>
           <View style={{flex: 1, marginTop: 20}}>
             <ScrollView horizontal={true}>
-              <View style={[styles.scrollingCard, styles.blue]}><Text>1</Text></View>
+              <View style={[styles.scrollingCard, styles.blue]}><Text>0</Text></View>
               <View style={[styles.scrollingCard, styles.green]}><Text>2</Text></View>
               <View style={[styles.scrollingCard, styles.purple]}><Text>3</Text></View>
               <View style={[styles.scrollingCard, styles.blue]}><Text>4</Text></View>

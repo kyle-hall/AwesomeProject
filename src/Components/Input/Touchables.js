@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 
 export default class Touchables extends React.Component<Props, State> {
   state = {
-    language: 'java',
+    language: 'ruby',
     sliderValue: 1,
     flipped: true
   }

@@ -59,10 +59,10 @@ export default class FlatListDemo extends React.Component<Props, State> {
     }
 
     return (
-      <View style={{flex: 1, padding: 20}}>
+      <View style={{flex: 1}}>
         <FlatList
           data={this.state.dataSource}
-          renderItem={({item}) => <Text>{item.title}, {item.releaseYear}</Text>}
+          renderItem={({item}) => <Text style={{paddingLeft: 10, height: 50}}>{item.title}, {item.releaseYear}</Text>}
         />
       </View>
     )
